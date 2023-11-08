@@ -1,9 +1,10 @@
-<div align="center" class="poke-form">
-  <p>Get started by searching for a Pokémon by name or number:</p>
+<div class="text-center mt-8">
   <%= form_tag '/pokemon', method: :get do %>
-    <div align="center" class="poke-search">
-      <%= text_field_tag :pokemon %>
-      <%= submit_tag "Search" %>
-    </div align="center">
+    <div class="flex items-center justify-center">
+      <div class="flex relative">
+        <%= text_field_tag :pokemon, nil, placeholder: "Enter Pokémon name or number" %>
+        <button class="search_border" type="submit">Search</button>
+      </div>
+    </div>
   <% end %>
-</div align="center">
+</div>
