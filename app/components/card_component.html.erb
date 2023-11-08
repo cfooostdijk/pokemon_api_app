@@ -1,17 +1,11 @@
-<header align="center">
-  <%= button_to "Home", root_path, method: :get %>
-</header>
-
 <div class="result-box">
-  <div align="center">
-    <h1><%= @pokemon.dig(:forms, 0, :name) %></h1>
+  <div>
+    <h1><%= @pokemon[:name].capitalize %></h1>
+    <%= image_tag @pokemon.dig(:sprites, :front_default) %>
   </div>
-
-  <%= form_tag '/pokemon', method: :get do %>
-    <div align="center" class="poke-search">
-      <p>Search for another Pokémon:</p>
-      <%= text_field_tag :pokemon %>
-      <%= submit_tag "Search" %>
-    </div align="center">
-  <% end %>
+  <div class="flex flex-row" style="justify-content: space-evenly;">
+    <p>Altura: <%= @pokemon[:height] %></p>
+    <p>Peso: <%= @pokemon[:weight] %></p>
+    <p>Poder: <%= @pokemon[:base_experience] %></p>
+  </div>
 </div>
