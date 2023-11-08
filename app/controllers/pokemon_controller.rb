@@ -1,8 +1,6 @@
 class PokemonController < ApplicationController
   def index
     pokemon = params[:pokemon]
-    conn = Faraday.new("https://pokeapi.co")
-    response = conn.get("/api/v2/pokemon/#{pokemon}/")
-    @pokemon = JSON.parse(response.body, symbolize_names: true)
+    @pokemon = ::PokeService.call_for_a_pokemon(pokemon)
   end
 end
