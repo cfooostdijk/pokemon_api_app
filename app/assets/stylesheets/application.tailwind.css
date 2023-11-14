@@ -34,6 +34,8 @@ body {
   border-radius: 30px;
   opacity: 70%;
   border: 5px solid #FFFFFF;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .result-box {
@@ -49,4 +51,8 @@ body {
   justify-content: center;
   position: relative;
   margin-bottom: 20px;
+}
+
+.home-button {
+  margin-bottom: 15px;
 }
