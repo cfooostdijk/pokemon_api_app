@@ -1,1 +1,3 @@
-<%= render(PokemonComponent.new(@pokemon)) %>
+<%= turbo_frame_tag "first_turbo_frame" do %>
+  <%= render(PokemonComponent.new(@pokemon)) %>
+<% end %>
