@@ -33,6 +33,8 @@ gem "view_component"
 # Use Faraday [https://github.com/lostisland/faraday]
 gem "faraday"
 
+gem 'fast_jsonapi'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
