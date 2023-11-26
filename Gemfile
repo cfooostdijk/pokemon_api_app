@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
+# Use Http-Wrapper [https://github.com/ppeusco-dev/http-wrapper]
+gem 'http-wrapper', path: '../http-wrapper'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 
@@ -33,7 +36,11 @@ gem "view_component"
 # Use Faraday [https://github.com/lostisland/faraday]
 gem "faraday"
 
+# Use Fast Json Api [https://github.com/Netflix/fast_jsonapi]
 gem 'fast_jsonapi'
+
+# Use Oj [https://github.com/ohler55/oj]
+gem 'oj'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"

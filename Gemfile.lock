@@ -1,3 +1,11 @@
+PATH
+  remote: ../http-wrapper
+  specs:
+    http-wrapper (0.1.0)
+      faraday (~> 2.7, >= 2.7.11)
+      oj (~> 3.16, >= 3.16.1)
+      rspec (~> 3.11, >= 3.11.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -88,8 +96,9 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
-    faraday (2.7.11)
+    faraday (2.7.12)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -137,6 +146,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    oj (3.16.1)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.3)
@@ -182,6 +192,19 @@ GEM
     reline (0.4.0)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.15.0)
@@ -235,8 +258,10 @@ DEPENDENCIES
   debug
   faraday
   fast_jsonapi
+  http-wrapper!
   importmap-rails
   jbuilder
+  oj
   puma (~> 5.0)
   rails (~> 7.0.8)
   redis (~> 4.0)
