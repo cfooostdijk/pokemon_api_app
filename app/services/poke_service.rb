@@ -1,17 +1,21 @@
 class PokeService
-  class << self
-    def call_for_a_pokemon(pokemon)
-      response = conn.get("/api/v2/pokemon/#{pokemon.downcase}/")
-      parse_data(response)
-    end
+  include Http::Wrapper::Client
 
-    private
-    def conn
-      Faraday.new("https://pokeapi.co")
-    end
+  API_ENDPOINT = 'https://pokeapi.co/api/v2/pokemon/'
 
-    def parse_data(response)
-      JSON.parse(response.body, symbolize_names: true)
-    end
+  def initialize
+    @connection = connection(
+      API_ENDPOINT,
+      { 'Content-Type' => 'application/json' }
+    )
+  end
+
+  def call_for_a_pokemon(pokemon)
+    request(
+      connection: @connection,
+      http_method: :get,
+      endpoint: "#{pokemon.downcase}",
+      params_type: :query
+    )
   end
 end
